@@ -17,23 +17,28 @@ totalDeCasos = dadosEstado["Total de casos"]
 casosDia = dadosEstado["Casos por dia"]
 obitosDia = dadosEstado["Óbitos por dia"]
 
+# Gráfico Total de Casos
 plt.plot(totalDeCasos, '--')
 plt.xlabel('Total de casos')
 plt.savefig("grafico_01.png")
 plt.close()
 
+# Gráfico Casos por dia
 pdf.multi_cell(w=0, h=8, txt="Grafico Total de Casos no estado de São Paulo", ln=1, align='C')
 pdf.image(x=20, y=30, w=180, h=80, name='exemplo.png')
 plt.plot(casosDia)
 plt.xlabel('Casos por dia')
 plt.savefig("grafico_02.png")
 plt.close()
+
+# Gráfico Obitos por dia
 pdf.multi_cell(w=0, h=230, txt="Grafico de Casos por Dia no estado de São Paulo", ln=1, align='C')
 pdf.image(x=20, y=140, w=180, h=80, name='exemplo2.png')
 plt.plot(obitosDia)
 plt.xlabel('Obitos por dia')
 plt.savefig("grafico_03.png")
 plt.close()
+
 pdf.multi_cell(w=0, h=30, txt="Grafico Óbitos por Dia no estado de São Paulo", ln=1, align='C')
 pdf.image(x=20, y=50, w=180, h=80, name='exemplo3.png')
 pdf.output('relatorio.pdf')
