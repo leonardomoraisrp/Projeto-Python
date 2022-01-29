@@ -17,6 +17,13 @@ totalDeCasos = dadosEstado["Total de casos"]
 casosDia = dadosEstado["Casos por dia"]
 obitosDia = dadosEstado["Óbitos por dia"]
 
+# variável onde se encontra o texto
+texto = " #KICK - PROJETO PYTHON - #KICK"
+
+# adiciona um texto no PDF
+pdf.multi_cell(w=0, h=8, txt=texto, align='J')
+
+
 # Gráfico Total de Casos
 plt.plot(totalDeCasos, '--')
 plt.xlabel('Total de casos')
